@@ -1,0 +1,12 @@
+data/longbench_v2/
+
+# Ignore dataset
+data/longbench_v2/*
+!data/longbench_v2/.gitkeep
+
+# Optional (recommended)
+data/splits/*
+!data/splits/.gitkeep
+
+results/*
+!results/.gitkeep

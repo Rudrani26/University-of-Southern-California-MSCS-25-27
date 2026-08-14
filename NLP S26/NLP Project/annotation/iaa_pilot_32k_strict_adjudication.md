@@ -1,0 +1,22 @@
+# Strict full-context adjudication
+
+- **66ec3aff821e116aacb1c52e** (single-document QA, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f2b5ec821e116aacb2b1ec** (structured data understanding, budget 32768): **RsF**; HALL=0. The album title is present in the rating table; the model chose the wrong candidate, not an unsupported one.
+- **6718a43fbb02136c067d3ca8** (dialogue history understanding, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **6724cae7bb02136c067d79be** (structured data understanding, budget 32768): **RsF**; HALL=0. The entity appears in the structured graph, but it is not the correct film for the queried relation.
+- **670493d4bb02136c067cdcd9** (single-document QA, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f3edfb821e116aacb2fc91** (long in-context learning, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **672468b1bb02136c067d74bd** (single-document QA, budget 32768): **RsF**; HALL=0. The sequence is a plausible ordering drawn from the conversation, but it is not the first event the question asks for.
+- **66f3ad93821e116aacb2e29f** (code repository reasoning, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f68b33bb02136c067c2303** (long in-context learning, budget 32768): **RF**; HALL=1. The watch manual does support shock resistance and the built-in sensors, but the answer adds a pacemaker/light-speed claim that is not in the context.
+- **67192e81bb02136c067d427f** (dialogue history understanding, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **670cb73fbb02136c067d2502** (code repository reasoning, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **6719bce5bb02136c067d4447** (dialogue history understanding, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f3fb96821e116aacb3043f** (long in-context learning, budget 32768): **RsF**; HALL=0. The selected translation is a plausible rendering of the source sentence, but it is not the ground-truth one.
+- **671b2e2dbb02136c067d515b** (dialogue history understanding, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f3e604821e116aacb2fadf** (multi-document QA, budget 32768): **RsF**; HALL=0. The paper excerpts do discuss compressed feature maps / pose-error handling / communication bandwidth, so the answer is grounded but still wrong.
+- **66fb6d71bb02136c067c7c34** (multi-document QA, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **6724c788bb02136c067d792d** (structured data understanding, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f8c6b4bb02136c067c4480** (multi-document QA, budget 32768): **RsF**; HALL=0. The Gaza situation report supports the comparison task, but the model mixed up the durations when selecting the worst daily rates.
+- **66fa2734bb02136c067c627a** (code repository reasoning, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66fa1b54bb02136c067c5df7** (code repository reasoning, budget 32768): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.

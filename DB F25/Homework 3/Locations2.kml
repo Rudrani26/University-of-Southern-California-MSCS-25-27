@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>DB HW3 Spatial Data</name>
+
+  <Folder>
+    <name>Libraries</name> <Placemark>
+      <name>Leavey Lib</name> 
+      <Point>
+        <coordinates>-118.283032,34.021632</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Doheny Lib</name> 
+      <Point>
+        <coordinates>-118.2841969324821,34.02027781641586</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Helen Lib</name> 
+      <Point>
+        <coordinates>-118.287774,34.019377</coordinates> 
+      </Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>Eateries</name> 
+    <Placemark>
+      <name>Burger Crush</name> 
+      <Point>
+        <coordinates>-118.286437,34.020127</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Rock Reillys</name> 
+      <Point>
+        <coordinates>-118.28411570742323,34.02439993118859</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Dulce</name> 
+      <Point>
+        <coordinates>-118.28534697081211,34.02549445524561</coordinates> 
+      </Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>Fountains</name> 
+    <Placemark>
+      <name>RTCC Fountain</name> 
+      <Point>
+        <coordinates>-118.286128,34.020421</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Leavey Fountain</name> 
+      <Point>
+        <coordinates>-118.283239,34.022229</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name> Trojan Fountain</name> 
+      <Point>
+        <coordinates>-118.28530389010646,34.02033916151937</coordinates> 
+      </Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>Department Buildings</name> 
+    <Placemark>
+      <name>Cinematic Arts</name> 
+      <Point>
+        <coordinates>-118.28778036459647,34.02396245145261</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Viterbi</name> 
+      <Point>
+        <coordinates>-118.289495,34.020647</coordinates> 
+      </Point>
+    </Placemark>
+    
+    <Placemark>
+      <name>Dornslife</name> 
+      <Point>
+        <coordinates>-118.287632,34.019714</coordinates> 
+      </Point>
+    </Placemark>
+  </Folder>
+  </Document>
+</kml>

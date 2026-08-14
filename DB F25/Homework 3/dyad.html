@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USC Points Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    label {
+      margin-right: 5px;
+    }
+    input {
+      width: 120px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Leaflet Map App</h1>
+  <div id="map"></div>
+
+  <!-- Input fields -->
+  <label for="lat">Latitude:</label>
+  <input type="number" id="lat" step="any" value="34.023">
+  <label for="lon">Longitude:</label>
+  <input type="number" id="lon" step="any" value="-118.285">
+  <button id="addMarker">Add Marker</button>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize map centered near USC
+    const map = L.map('map').setView([34.023, -118.285], 16);
+
+    // Add OSM tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add marker on button click
+    document.getElementById('addMarker').addEventListener('click', () => {
+      const lat = parseFloat(document.getElementById('lat').value);
+      const lon = parseFloat(document.getElementById('lon').value);
+
+      if (!isNaN(lat) && !isNaN(lon)) {
+        // Create a new marker for each input
+        const marker = L.marker([lat, lon]).addTo(map);
+        map.panTo([lat, lon]);
+      } else {
+        alert("Please enter valid latitude and longitude values.");
+      }
+    });
+  </script>
+</body>
+</html>

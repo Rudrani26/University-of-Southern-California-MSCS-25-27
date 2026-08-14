@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "task": "LongBench Diagnostic Error Annotation",
+  "primary_categories": [
+    {
+      "id": "RF",
+      "label": "Retrieval Failure",
+      "definition": "Model selects an answer not supported by any passage in the context.",
+      "decision_cue": "Could a careful human reader find evidence for the predicted answer in the context? If no, RF."
+    },
+    {
+      "id": "RsF",
+      "label": "Reasoning Failure",
+      "definition": "Relevant passage is present and identifiable, but the model draws an incorrect inference.",
+      "decision_cue": "Is the correct evidence present? If yes, and the model still got it wrong, RsF."
+    },
+    {
+      "id": "INC",
+      "label": "Instruction Non-Compliance",
+      "definition": "Answer format or task constraint violated despite sufficient information.",
+      "decision_cue": "Did the model output something other than A/B/C/D, or violate an explicit constraint?"
+    }
+  ],
+  "secondary_attributes": [
+    {
+      "id": "HALL",
+      "label": "Hallucination",
+      "definition": "Answer relies on information not present anywhere in the provided context.",
+      "type": "binary",
+      "values": [0, 1],
+      "decision_cue": "Does the model's prediction reference a specific fact, name, number, or claim that does not appear anywhere in the context? If yes, HALL=1."
+    }
+  ],
+  "valid_primary_labels": ["RF", "RsF", "INC"],
+  "valid_hall_values": [0, 1],
+  "notes": "Every error instance receives exactly one primary_category label and one HALL value. HALL is independent of the primary label — any primary category can co-occur with HALL=1."
+}

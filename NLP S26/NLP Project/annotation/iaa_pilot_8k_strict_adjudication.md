@@ -1,0 +1,22 @@
+# Strict full-context adjudication
+
+- **670cb73fbb02136c067d2502** (code repository reasoning, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f24538821e116aacb2865e** (multi-document QA, budget 8192): **RsF**; HALL=0. The option is supported by the discourse chapter, but it does not answer the question’s finer distinction correctly.
+- **66ec7ba6821e116aacb1d114** (multi-document QA, budget 8192): **RF**; HALL=1. The chosen option adds an unsupported extra-camera claim; the paper excerpt says the approach is software-only with front and rear cameras, so this is a retrieval/hallucination error.
+- **6718a43fbb02136c067d3ca8** (dialogue history understanding, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **6724cae7bb02136c067d79be** (structured data understanding, budget 8192): **RsF**; HALL=0. The entity appears in the structured graph, but it is not the correct film for the queried relation.
+- **66f3df1e821e116aacb2f7be** (code repository reasoning, budget 8192): **RsF**; HALL=0. The API docs support the creation inputs, but the finalization step is wrong; this is a reasoning mistake, not a missing-evidence case.
+- **6725d8dbbb02136c067d8309** (long in-context learning, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f3ad93821e116aacb2e29f** (code repository reasoning, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f7f382bb02136c067c3a6c** (structured data understanding, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f52d48821e116aacb32cf4** (single-document QA, budget 8192): **RsF**; HALL=0. The Huck Finn passage supports the selected detail; the model simply chose the wrong “NOT” option.
+- **67192e81bb02136c067d427f** (dialogue history understanding, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f94f9ebb02136c067c4fde** (multi-document QA, budget 8192): **RsF**; HALL=0. The annual-report text supports the telehealth/crisis-to-long-term-strategy contrast, so this is a wrong-but-grounded choice.
+- **66ebe68d5a08c7b9b35e190b** (single-document QA, budget 8192): **RsF**; HALL=0. The Copyright Office letter supports the human-authorship limitation and the distinction between text/arrangement and AI-generated images; the answer is still a reasoning error, not an unsupported hallucination.
+- **66ed1556821e116aacb1ea14** (single-document QA, budget 8192): **RsF**; HALL=0. The selected statement is part of the comparison in the paper excerpt, but it is not the correct one.
+- **66ec56dd821e116aacb1cd0e** (code repository reasoning, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66fa8ccdbb02136c067c6fa7** (structured data understanding, budget 8192): **RsF**; HALL=0. The choice is grounded in the source passage, but it is not the correct inference.
+- **671b99e5bb02136c067d583d** (dialogue history understanding, budget 8192): **RsF**; HALL=0. The selected conversation exists in the haystack, but it is not the one that best matches the question’s satisfaction criterion.
+- **671b58e8bb02136c067d5525** (dialogue history understanding, budget 8192): **RsF**; HALL=0. The choice is directly supported by the text, but it is not the ground-truth answer.
+- **66f3edfb821e116aacb2fc91** (long in-context learning, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.
+- **66f3f1a5821e116aacb2fdc7** (long in-context learning, budget 8192): **INC**; HALL=0. Blank output; no A/B/C/D answer was produced.

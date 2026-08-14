@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>OpenLayers - HW3 Map</title>
+  <meta charset="UTF-8">
+
+  <!-- OpenLayers CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
+
+  <style>
+    #map {
+      width: 100%;
+      height: 90vh;
+    }
+
+    .ol-popup {
+      position: absolute;
+      background-color: white;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #cccccc;
+      bottom: 12px;
+      left: -50px;
+      min-width: 120px;
+    }
+
+    .ol-popup:after,
+    .ol-popup:before {
+      top: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .ol-popup:after {
+      border-top-color: white;
+      border-width: 10px;
+      left: 48px;
+      margin-left: -10px;
+    }
+
+    .ol-popup:before {
+      border-top-color: #cccccc;
+      border-width: 11px;
+      left: 48px;
+      margin-left: -11px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>HW3 — Visualization of 13 Locations (OpenLayers)</h2>
+<div id="map"></div>
+
+<!-- Popup container -->
+<div id="popup" class="ol-popup"></div>
+
+<!-- OpenLayers JS -->
+<script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+
+<script>
+// ---------------------------------------------------------
+// 1. Store the 13 points in localStorage
+// ---------------------------------------------------------
+
+localStorage.setItem("locations", JSON.stringify([
+  {name: "Home", lon: -118.28774732502247, lat: 34.03248127197735},
+  {name: "Leavey Lib", lon: -118.283032, lat: 34.021632},
+  {name: "Doheny Lib", lon: -118.2841969324821, lat: 34.02027781641586},
+  {name: "Helen Lib", lon: -118.287774, lat: 34.019377},
+
+  {name: "Burger Crush", lon: -118.286437, lat: 34.020127},
+  {name: "Rock Reillys", lon: -118.28411570742323, lat: 34.02439993118859},
+  {name: "Dulce", lon: -118.28534697081211, lat: 34.02549445524561},
+
+  {name: "RTCC Fountain", lon: -118.286128, lat: 34.020421},
+  {name: "Leavey Fountain", lon: -118.283239, lat: 34.022229},
+  {name: "Trojan Fountain", lon: -118.28530389010646, lat: 34.02033916151937},
+
+  {name: "Cinematic Arts", lon: -118.28778036459647, lat: 34.02396245145261},
+  {name: "Viterbi", lon: -118.289495, lat: 34.020647},
+  {name: "Dornslife", lon: -118.287632, lat: 34.019714}
+]));
+
+let pts = JSON.parse(localStorage.getItem("locations"));
+
+// ---------------------------------------------------------
+// 2. Create features with labels + icons
+// ---------------------------------------------------------
+
+let features = pts.map(pt => {
+  let feature = new ol.Feature({
+    geometry: new ol.geom.Point(ol.proj.fromLonLat([pt.lon, pt.lat])),
+    name: pt.name
+  });
+
+  feature.setStyle(new ol.style.Style({
+    image: new ol.style.Icon({
+      src: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+      scale: 0.07
+    }),
+    text: new ol.style.Text({
+      text: pt.name,
+      offsetY: -25,
+      scale: 1.2,
+      fill: new ol.style.Fill({ color: "#000000" }),
+      stroke: new ol.style.Stroke({ color: "#ffffff", width: 3 })
+    })
+  }));
+
+  return feature;
+});
+
+// ---------------------------------------------------------
+// 3. Vector layer for the points
+// ---------------------------------------------------------
+
+let vectorLayer = new ol.layer.Vector({
+  source: new ol.source.Vector({
+    features: features
+  })
+});
+
+// ---------------------------------------------------------
+// 4. Setup map with OSM + markers
+// ---------------------------------------------------------
+
+let map = new ol.Map({
+  target: "map",
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.OSM()
+    }),
+    vectorLayer
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([-118.285, 34.023]),
+    zoom: 15
+  })
+});
+
+// ---------------------------------------------------------
+// 5. Popup logic for clicking points
+// ---------------------------------------------------------
+
+let popup = document.getElementById("popup");
+
+let overlay = new ol.Overlay({
+  element: popup,
+  positioning: "bottom-center",
+  stopEvent: false
+});
+map.addOverlay(overlay);
+
+map.on("click", function(event) {
+  let feature = map.forEachFeatureAtPixel(event.pixel, function(ft) { return ft; });
+
+  if (feature) {
+    let coordinates = feature.getGeometry().getCoordinates();
+    overlay.setPosition(coordinates);
+
+    popup.innerHTML = `<strong>${feature.get("name")}</strong>`;
+    popup.style.display = "block";
+  } else {
+    popup.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

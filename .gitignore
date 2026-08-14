@@ -1,0 +1,74 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build / compiled files
+# =========================
+build/
+dist/
+out/
+*.class
+*.dll
+*.so
+*.dylib
+
+# =========================
+# Node
+# =========================
+node_modules/
+npm-debug.log*
+
+# =========================
+# Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs / temporary files
+# =========================
+*.log
+*.tmp
+*.swp
+*.swo
+
+# =========================
+# Large datasets / downloaded resources
+# =========================
+
+# NLP HW2
+NLP S26/HW2/amazon_reviews_us_Office_Products_v1_00.tsv.gz
+NLP S26/HW2/balanced_dataset_out.csv
+NLP S26/HW2/tokens_raw.pkl
+NLP S26/HW2/tokens_stemmed.pkl
+
+# NLP HW3
+NLP S26/HW3/HW3/glove.6B.100d.gz
+
+# NLP Project
+NLP S26/NLP Project/data/longbench_v2.zip
+NLP S26/NLP Project/data/longbench_v2/longbench_v2.json
